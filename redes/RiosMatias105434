@@ -1,0 +1,122 @@
+#! /usr/bin/env python
+from scapy.all import *
+import signal
+import argparse
+
+#	Rios Matias L.U:105434
+
+def consultaDNS(nombre,tipo,ipdst,recd,reca):
+	try:
+		ip=IP(dst=ipdst)
+		udp=UDP(dport=53)
+		dns=DNS(rd=recd,ra=reca,qd=DNSQR(qname=nombre, qtype=tipo))
+		
+		ans=sr1(ip/udp/dns,verbose=0,timeout=2)
+		return ans
+	except Exception:
+		print("Fallo la consulta \""+nombre+"\" IN "+tipo+" a "+ipdst)
+		exit(0)
+
+def obtenerTLD(server_dns):
+	try:
+		ans=consultaDNS(".","NS",server_dns,0,0)
+		an=[]
+		i=0
+		while(i<ans.ancount):
+			an.append([ans[DNS].an[i].rrname,ans[DNS].an[i].rdata,str(ans[DNS].an[i].get_field('type').i2repr(ans[DNS].an[i],ans[DNS].an[i].type))])
+			i+=1
+		for x in an:
+			if(ans[DNS].ar!=None):
+				y=ans[DNS].ar
+				m=0
+				while(m<ans.arcount):
+					if (x[0]==y[m].rrname and y[m].type==1):
+						x.append(y[m].rdata)
+					m+=1
+			if(len(x)==3):
+				aux=consultaDNS(x[1],"A",server_dns,1,1)
+				if(aux.ancount>0):
+					x.append(aux.an.rdata)
+		return an
+	except Exception:
+		print("Fallo contacto con Nameserver " +server_dns)
+		return None
+
+def exitGracefully(signum,frame):
+  signal.signal(signal.SIGINT,ori_sig)
+  output()
+  sys.exit(1)
+
+def obtenerDNS():
+	nameservers=[]
+	try:
+		archivo=open("/etc/resolv.conf","r")
+		for linea in archivo.readlines():
+			string=linea.split(" ")
+			if(string[0]=="nameserver"):
+				nameservers.append(string[1].split("\n")[0])
+		archivo.close()
+		return nameservers
+	except IOError:
+		print("Fallo encontrar el archivo /etc/resolv.conf. Se utilizaran servidores de Google")
+		return nameservers
+
+def validarFQDN(fqdn):
+    try:
+        socket.gethostbyname(fqdn)
+        return fqdn
+    except socket.error:
+        print("Fallo al validar FQDN")
+        exit(0)
+
+
+def main(argv):
+	#Parser
+	parser = argparse.ArgumentParser(description='DNS-Trace')
+	parser.add_argument("FQDN",help="FQDN de quien se quiere obtener la traza. Ejemplo valido: www.google.com. Ejemplos invalido: w.google.com ; www.google.ccom")
+	arg = parser.parse_args()
+	#Validacion FQDN
+	host=validarFQDN(arg.FQDN)
+	h=host.split('.')
+	i=len(h)-1
+	aux=h[i]+"."
+	i-=1
+	#Inicio de la salida por pantalla
+	print("////////////////////////////////////////////////////////")
+	print("FQDN: "+host)
+	print("TRACE //////////////////////////////////////////////////")
+	#Busco Nameserver en el archivo resolv.conf
+	ns=obtenerDNS()
+	#Agrego Google servers por si no encuentro Nameservers en el archivo resolv.conf
+	ns.append("8.8.8.8")
+	ns.append("8.8.4.4")
+	#Intento obtener servers root con los nameservers en ns
+	for nameserver in ns:
+		tlds=obtenerTLD(nameserver)
+		if(tlds):
+			destino=nameserver
+			break
+	for linea in tlds:
+		print("\""+linea[0]+"\"" + "\tIN\t"+linea[2]+"\t"+linea[1]+"\t"+linea[3])
+	print("////////////////////////////////////////////////////////")
+	#Resolucion iteratica del FQDN
+	for m in range(len(h)):
+		if aux == host+".":
+			ans=consultaDNS(host,"A",destino,1,1)
+			for n in range(ans[DNS].ancount):
+				print ("\""+ans[DNS].an[n].rrname+"\"" + "\tIN\t"+ans[DNS].an[n].get_field('type').i2repr(ans[DNS].an[n],ans[DNS].an[n].type)+"\t"+ans[DNS].an[n].rdata)
+		else:
+			ans=consultaDNS(aux,"NS",destino,1,1)
+			for p in range(ans[DNS].ancount):
+				ans2=consultaDNS(ans[DNS].an[p].rdata,"A",destino,1,1)
+				print ("\""+ans[DNS].an[p].rrname+"\"" + "\tIN\t"+str(ans[DNS].an[p].get_field('type').i2repr(ans[DNS].an[p],ans[DNS].an[p].type))+"\t"+ans[DNS].an[p].rdata+"\t"+ans2[DNS].an[0].rdata)
+		print("////////////////////////////////////////////////////////")
+		aux = h[i] + "." + aux
+		i -= 1
+	exit(0)
+
+if __name__=="__main__":
+  #Para capturar CTRL+C////////////////////////////////////////////////
+  ori_sig = signal.getsignal(signal.SIGINT)
+  signal.signal(signal.SIGINT,exitGracefully)
+  main(sys.argv[1:])
