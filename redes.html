@@ -4,7 +4,7 @@ la pagina inventario petshop
 -->
 <html>
 	<head>
-		<title>Geome7ric 1.0</title>		
+		<title>Rastreo de DNIS</title>		
 		<link  rel="icon"  href="images/lobopng.png" type="image/png">
 		<meta http-equiv="Content-Type" content="text/html;charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -18,14 +18,14 @@ la pagina inventario petshop
 
 				<!-- Header -->
 					<header id="header">
-						<a href="#" class="logo">GEOME7RIC</a>
+						<a href="#" class="logo">Rastreo de DNS</a>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
 							<li><a href="index.html">Inicio</a></li>
-							<li class="active"><a href="inventariopetshop.html">GEOME7RIC</a></li>
+							<li class="active"><a href="inventariopetshop.html">Rastreo de DNS</a></li>
 							<!--li><a href="elements.html">Elements Reference</a></li-->
 						</ul>
 						<ul class="icons">
@@ -42,17 +42,37 @@ la pagina inventario petshop
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">29 de Junio, 2019</span>
-									<h1>Primer <br />
-									software vendido</h1>
-									<p>Se me solicitó un software para poder reemplazar al papel y lapiz en la tarea diaria de un Pet Shop<br />
+									<span class="date">14 de Junio, 2019</span>
+									<h1>DNS<br />
+									trace</h1>
+									<p>Script en Python para obtener por pantalla la traza de las consultas realizadas en cada nivel del espacio de nombres al tomar como entrada un FQDN<br />
 									<br />
 									</p>
 								</header>
-								<div class="image main"><img src="images/petshop/portada.jpg" alt="" /></div>
-								<p>  Fue desarrollado en Java a lo largo de 40 días utilizando como base de datos archivos .xlsx de Excel. El programa funciona con lectora de código de barras
-								y es altamente adaptable a todo tipo de comercios que deseen eliminar el papel de su día a día, para mayor comodidad y seguridad.
-								<a href="documentos/inventario/manual.pdf">En este link</a> facilito el manual de usuario proporcionado al comprador.
+								<div class="image main"><img src="images/redes/dns.jpg" alt="" /></div>
+								<p>  
+								Se utilizó la libreria Scapy y servidores de Google. Las características del script son las siguientes
+
+								Argumentos y opciones de entrada:
+El FQDN sobre la cual se va a realizar la traza.
+Las opciones ”-h” o ”- -help” que hacen que el script retorne una ayuda de la forma de invocación.
+Validación de la entrada:
+Se debe validar que el FQDN pasado como par´ametro tenga resolución de DNS antes de iniciar la
+traza.
+Salida:
+En el caso de que las opciones de entrada no se ajusten a lo esperado por el script, debe imprimir
+por pantalla la ayuda.
+Para cada uno de los subdominios, el script debe mostrar por pantalla el nombre y la direcci´on de
+cada servidor de nombres (ver ejemplo).
+Al finalizar la traza debe mostrar todos los RRs asociados al FQDN (ver ejemplo).
+Ejecución:
+El script debe obtener los nombres de los TLD haciendo una consulta a los servidores de DNS configurados en el equipo (archivo /etc/resolv.conf ), y como última instancia, 
+debe usar los servidores de Google.
+El script no puede invocar ningún comando exterior, solo librerías de Python y Scapy.
+En cada uno de los pasos, la resoluci´on de nombres para presentar por pantalla la información, se
+llevará a cabo usando los servidores que se citan en el primer punto.
+
+
 								</p>
 								<!--p>Otro párrafo.</p-->
 							</section>
