@@ -2026,6 +2026,8 @@ textarea.form-control {
     .form-inline .custom-control-label {
       margin-bottom: 0; } }
 
+
+
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -2092,6 +2094,22 @@ fieldset:disabled a.btn {
     .show > .btn-primary.dropdown-toggle:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
       box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); }
+
+
+.btn-whatsapp {
+        display:block;
+        width:70px;
+        height:70px;
+        color#fff;
+        position: fixed;
+        right:20px;
+        bottom:20px;
+        border-radius:50%;
+        line-height:80px;
+        text-align:center;
+        z-index:999;
+}
+
 
 .btn-secondary {
   color: #fff;
