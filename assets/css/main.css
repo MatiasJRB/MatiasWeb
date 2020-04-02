@@ -3049,6 +3049,43 @@ width: 100%;
 height: 100%;
 }
 
+/* Para tener un ancho máximo debemos de establecer el width del DIV.delimitador */
+.delimitador{
+width:560px;
+margin:auto;
+}
+/* El contenedor con el padding-top crea el tamaño del vídeo */
+.contenedor{
+height:0px;
+width:100%;
+max-width:560px; /* Así establecemos el ancho máximo (si lo queremos) */
+padding-top:56.25%; /* Relación: 16/9 = 56.25% */
+position:relative;
+}
+/* El iframe se adapta al tamaño del contenedor */
+.iframe{
+position:absolute;
+height:100%;
+width:100%;
+top:0px;
+left:0px;
+}
+
+.responsiveContent {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.2%;
+  margin-bottom: 20px;
+}
+.responsiveContent iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .centro {
 			/*font-size: 0.9rem;
 			height: 3.5rem;
