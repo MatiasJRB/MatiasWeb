@@ -2922,6 +2922,14 @@ input, select, textarea {
 			margin: 0 0 1rem 0;
 			position: relative;
 		}
+		
+		header > .date1 {
+			display: block;
+			font-size: 3rem;
+			height: 1;
+			margin: 0 0 1rem 0;
+			position: relative;
+		}
 
 		header > p {
 			font-style: italic;
@@ -2963,6 +2971,11 @@ input, select, textarea {
 			}
 
 			header.major > .date {
+				font-size: 1rem;
+				margin: 0 0 4rem 0;
+			}
+			
+			header.major > .date1 {
 				font-size: 1rem;
 				margin: 0 0 4rem 0;
 			}
