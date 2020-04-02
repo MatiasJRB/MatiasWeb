@@ -3071,6 +3071,16 @@ top:0px;
 left:0px;
 }
 
+.responsiveVerticalContent {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  /*padding-top: 20px; 
+  padding-bottom: 20px;*/
+  padding-bottom: 100%;
+  margin-bottom: 20px;
+}
+
 .responsiveContent {
   position: relative;
   height: 0;
