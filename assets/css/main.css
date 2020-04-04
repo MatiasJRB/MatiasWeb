@@ -3089,7 +3089,7 @@ p.ppup:hover {
 p.ppup span {
 	position: absolute; left: -9999px;
 	margin: 20px 0 0 0px; padding: 3px 3px 3px 3px;
-	border-style:solid; border-color:black; border-width:1px; z-index: 6;
+	border-style:solid; border-color:#700000; border-width:1px; z-index: 6;
 }
 p.ppup:hover span {
 	left: 2%; background: #ffffff;
@@ -3097,7 +3097,7 @@ p.ppup:hover span {
 p.ppup span {
 	position: absolute; left: -9999px;
 	margin: 4px 0 0 0px; padding: 3px 3px 3px 3px; 
-	border-style:solid; border-color:black; border-width:1px;
+	border-style:solid; border-color:#700000; border-width:1px;
 }
 
 p.ppup:hover span {
