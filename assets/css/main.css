@@ -3025,8 +3025,8 @@ input, select, textarea {
         position: fixed;
         right:20px;
         bottom:20px;
-        border-radius:50%;
-        line-height:80px;
+        /*border-radius:50%;*/
+        /*line-height:80px;*/
         text-align:center;
         z-index:999;
 }
@@ -3080,6 +3080,29 @@ left:0px;
   padding-bottom: 120%;
   margin-bottom: 20px;
 }
+p.ppup {
+	background: #ffffff;
+}
+p.ppup:hover {
+	text-decoration: none; background: #ffffff; z-index: 6; 
+}
+p.ppup span {
+	position: absolute; left: -9999px;
+	margin: 20px 0 0 0px; padding: 3px 3px 3px 3px;
+	border-style:solid; border-color:black; border-width:1px; z-index: 6;
+}
+p.ppup:hover span {
+	left: 2%; background: #ffffff;
+} 
+p.ppup span {
+	position: absolute; left: -9999px;
+	margin: 4px 0 0 0px; padding: 3px 3px 3px 3px; 
+	border-style:solid; border-color:black; border-width:1px;
+}
+
+p.ppup:hover span {
+	margin: 20px 0 0 170px; background: #ffffff; z-index:6;
+} 
 
 .responsiveContent {
   position: relative;
