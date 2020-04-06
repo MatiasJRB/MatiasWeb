@@ -11,7 +11,7 @@ la pagina inventario petshop
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!-- jQuery 1.8 or later, 33 KB -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+		<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 		<!-- Fotorama from CDNJS, 19 KB -->
 		<link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
@@ -91,6 +91,22 @@ la pagina inventario petshop
 									Métodos
 								</p>
 								
+								<pre class="prettyprint"><code class="language-java">public void establecerParametros()
+{	   
+	/*
+		Credenciales y direcciones para la conexión
+	*/
+	driver = "com.ibm.db2.jcc.DB2Driver";
+	servidor = "181.228.144.21:51552";
+	baseDatos = "mjRios";
+	usuario = "userExterno";
+	clave = "passExterno";
+	urlConexion = "jdbc:mysql://" + servidor + "/" + baseDatos;
+}</code></pre>
+								
+								
+								
+					
 								<p class="caja">
 										public void establecerParametros()</br>
 										{</br>
