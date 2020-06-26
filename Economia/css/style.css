@@ -1529,7 +1529,21 @@ service-icon-style
     top: 0;
     z-index: 9999;
     }
-
+	
+.responsiveContent {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.2%;
+  margin-bottom: 20px;
+}
+.responsiveContent iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 #status,
 .status-mes {
     background-image: url(../img/preloader.gif);
