@@ -79,32 +79,23 @@
 									<h4>Módulos</h4>
 									<p>
 									&nbsp;&nbsp;&nbsp;&nbsp;Tendríamos 3 módulos fundamentales. 
-									Por un lado el que corresponde a quién está a cargo cargar los resultados de las fechas, que además es el único
+									Por un lado, el que corresponde a quién está a cargo de mantener todos los datos de la aplicación actualizados, que además es el único
 									capaz de cargar datos (nuevos equipos, nuevos jugadores de equipos, etc.) y modificar lo que considere necesario.
 									Además, es el único capaz de crear perfiles de usuario dentro del sistema. Éste módulo corresponde al <b>administrador</b>.
 									Por otro lado, a quienes están a cargo de comunicar los resultados de los partidos al administrador, a quienes llamaremos
 									<b>planilleros</b>. Y por último, quienes ingresan a la aplicación en busca de la información cargada, a quienés llamaremos
 									<b>visitantes.</b>
+									Para diferenciar entre <b>administrador</b> y <b>planilleros</b>, se implementa un sistema
+									de inicios de sesión con usuario y contraseña.<br>&nbsp;&nbsp;&nbsp;&nbsp;
+									Un <b>administrador</b> podrá cargar los resultados todo dato requerido y relacionado a una fecha, plantillas completas
+									de equipos con la información deseable de cada jugador, y será capaz de modificar estos datos en todo momento. Un <b>administrador</b>
+									puede acceder a un panel en donde le llegará la información proporcionada por los planilleros.Sólo un <b>administrador</b>
+									podrá de crear perfiles de usuario dentro del sistema, para por ejemplo, asignar un nuevo administrador.
 									
-									
-									Por un lado el que corresponde a quien está a cargo de tomar los pedidos y la gestión del catálogo y clientela,
-									que llamaremos 
-									<b>administrador</b>. Por otro lado, quienes están a cargo de tomar los pedidos de los puntos comerciales 
-									a quienes llamaremos preventistas. Y por último, los dueños de los puntos comerciales que en un principio
-									solo podrán modificar los pedidos realizados por los preventistas, que llamaremos clientes.
-									Para diferenciar entre <b>administrador</b>, <b>cliente</b> y <b>preventista</b>, se implementa un sistema
-									de inicios de sesión con usuario y contraseña.<br>&nbsp;&nbsp;&nbsp;&nbsp;Un <b>administrador</b> podrá cargar al 
-									sistema productos con imagenes, precios y demás caracteristicas deseables, siendo capaz de modificar sus parámetros
-									en todo momento. Un <b>administrador</b> será capaz de cargar al sistema clientela con sus números de contacto, 
-									direcciones y demás características deseables, siendo capaz de modificar sus parámetros en todo momento. 
-									Un <b>administrador</b> tendrá acceso a un panel en el que	se listaran los pedidos, pedidos de los que se sabe de que 
-									cliente es, fecha y hora, que productos se pidieron, que monto, etc. Sólo un <b>administrador</b> tiene la capacidad 
-									de administrar los pedidos, modificando sus estados: recibido, pedido completado, pedido entregado, etc. Un <b>administrador</b>
-									será capaz de administrar los usuarios del sistema que serán preventistas.
-									<br>&nbsp;&nbsp;&nbsp;&nbsp; Un <b>preventista</b> podrá tomar pedidos utilizando el catálogo de productos, definiendo 
-									qué cliente lo está realizando.
-									<br>&nbsp;&nbsp;&nbsp;&nbsp; Un <b>cliente</b> podrá modificar en un determinado plazo el pedido que el preventista
-									le tomó y efectuar comentario sobre el pedido.
+									<br>&nbsp;&nbsp;&nbsp;&nbsp; Un <b>planillero</b> podrá comunicar los datos de las planillas corespondientes a las fechas
+									a un administrador. Tal vez y por lo hablado, mediante una fotografía.
+									<br>&nbsp;&nbsp;&nbsp;&nbsp; Un <b>visitante</b> podrá ver la información de cada partido disputado de las diferentes
+									categorías contemplads.
 									<br>&nbsp;&nbsp;&nbsp;&nbsp; Una vez la aplicación cumpla con las funciones anteriormente
 									mencionadas, diremos que la aplicación alcanzó el estandar de producto base.
 									</p>
@@ -126,7 +117,7 @@
 								    de datos. Probablemente, voy a terciarizar con una empresa argentina de Buenos Aires, 
 								    <a href=https://www.wnpower.com/ target=_blank>"WNPower"</a>.<br>
 									</p>
-									<!--h4>Presupuestos</h4-->
+									<!--h4>Presupuestos estimados</h4-->
 								<!--p>
 								El presupuesto uno corresponde a la solución descripta
 									<div class="responsiveContent">
