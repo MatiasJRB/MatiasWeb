@@ -1,0 +1,163 @@
+﻿<!DOCTYPE HTML>
+<!--
+la pagina inventario petshop
+-->
+<html>
+	<head>
+		<title>Rastreo de DNIS</title>		
+<link  rel="icon"  href="images/lobo3.png" type="image/png">		<meta http-equiv="Content-Type" content="text/html;charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+<!-- Whatsapp-->
+		<div class="btn-whatsapp">
+			<a href="https://api.whatsapp.com/send?phone=542916450794" target="_blank">
+				<img src="images/whatsapp.png" alt="" width="45" height="45">
+				
+			</a>
+		</div>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="#" class="logo">Rastreo de DNS</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Inicio</a></li>
+							<li class="active"><a href="inventariopetshop.html">Rastreo de DNS</a></li>
+							<!--li><a href="elements.html">Elements Reference</a></li-->
+						</ul>
+						<ul class="icons">
+							<li><a href="https://api.whatsapp.com/send?phone=542916450794&text=¡Hola!%20Me%20quiero%20comunicar%20con%20vos" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+							<li><a href="https://www.youtube.com/channel/UCZUdNoXqD2aSVJ3tEEbV5uw" target="_blank" class="icon brands fa-youtube"><span class="label">Youtube</span></a></li>
+							<li><a href="https://www.twitch.tv/mathyork" target="_blank" class="icon brands fa-twitch"><span class="label">Twitch</span></a></li>
+							<li><a href="https://twitter.com/matiasriosj" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/Ma7iasJRB" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.instagram.com/matiasjrios" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/MatiasJRB" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">14 de Junio, 2019</span>
+									<h1>DNS<br />
+									trace</h1>
+									<p>Script en Python para obtener por pantalla la traza de las consultas realizadas en cada nivel del espacio de nombres al tomar como entrada un FQDN<br />
+									<br />
+									</p>
+								</header>
+								<div class="image main"><img src="images/redes/dns.jpg" alt="" /></div>
+								<p>  
+								Se utilizó la libreria Scapy y servidores de Google. Las características del script son las siguientes <br>
+
+								Argumentos y opciones de entrada:<br>
+El FQDN sobre la cual se va a realizar la traza.
+Las opciones ”-h” o ”- -help” que hacen que el script retorne una ayuda de la forma de invocación.<br>
+Validación de la entrada:<br>
+Se debe validar que el FQDN pasado como par´ametro tenga resolución de DNS antes de iniciar la
+traza.<br>
+Salida:<br>
+En el caso de que las opciones de entrada no se ajusten a lo esperado por el script, debe imprimir
+por pantalla la ayuda.
+Para cada uno de los subdominios, el script debe mostrar por pantalla el nombre y la dirección de
+cada servidor de nombres (ver ejemplo).
+Al finalizar la traza debe mostrar todos los RRs asociados al FQDN (ver ejemplo).<br>
+Ejecución:<br>
+El script debe obtener los nombres de los TLD haciendo una consulta a los servidores de DNS configurados en el equipo (archivo /etc/resolv.conf ), y como última instancia, 
+debe usar los servidores de Google.
+El script no puede invocar ningún comando exterior, solo librerías de Python y Scapy.
+En cada uno de los pasos, la resoluci´on de nombres para presentar por pantalla la información, se
+llevará a cabo usando los servidores que se citan en el primer punto.
+
+					
+								</p>
+								<p><video src="documentos/redes/vid.mp4" autoplay muted loop></video></p>
+								<p><a href="documentos/redes/RiosMatias105434">Acá el script.</a></p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="POST" action="https://formspree.io/mjrcal95@hotmail.com.ar" class="form_contact">
+								<div class="fields">
+									<!--span class="fa fa-user-circle"></span-->
+									<h2>¿PREGUNTAS?</h2>
+									<!--div class="field">
+										<label for="name">Nombre</label>
+										<input type="text" name="name" id="name" />
+									</div-->
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Mensaje</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Enviar mensaje" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Localidad</h3>
+								<p>Bahía Blanca, Buenos Aires<br />
+								</p>
+							</section>
+							<section>
+								<h3>Teléfono</h3>
+								<p>
+									<a href="tel://+54 (291) 645-0794">+54(291) 645-0794</a>
+								</p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p>
+									<a href="mailto:mjrcal95@hotmail.com.ar">mjrcal95@hotmail.com.ar</a>
+								</p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://twitter.com/matiasriosj" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.facebook.com/Ma7iasJRB" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/matiasjrios" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/MatiasJRB" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; MatiasJRB</li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
